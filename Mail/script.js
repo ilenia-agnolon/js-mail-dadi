@@ -24,7 +24,36 @@ const guests = [
 
 
 //INPUT: chiedo all'utente la sua mail
-const mail = (prompt("inserisci la tua mail"));
+const guestMail = (prompt("inserisci la tua mail"));
 
-    console.log("mail inserita:", mail);
+    console.log("mail inserita:", guestMail);
+
+
+
+
+//ELABORAZIONE
+
+//Creo una variabile che mi serve a ricordare se l’utente è invitato
+let isInvited = false; //di default dico che NON è invitato
+
+
+    // Ciclo che scorre tutta la lista
+    for (let i = 0; i < guests.length; i++) {
+
+        if (guests[i] === guestMail) {
+            isInvited = true;
+        }
+
+    }
+
+    
+
+//OUTPUT
+if (isInvited) {
+  console.log("Accesso consentito: sei nella lista!");
+} else {
+  console.log("Accesso negato: non sei nella lista.");
+}
+
+    
     
